@@ -269,11 +269,38 @@ header{
 	margin-bottom: 3rem;
 }
 
+.restaurant-decr p{
+	line-height: 1.6;
+	margin-bottom: 2.4rem;
 
+}
+.body-btn{
+	font-size: 1.5rem;
+	color: var(--secondary-font-color);
+	position: relative;
+	transition: color .5s;
+	cursor: pointer;
+}
 
-
-
-
+.body-btn::before{
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	width: 100%;
+	height: 2px;
+	background-color: var(--secondary-font-color);
+	transition: background-color .5s;
+}
+.body-btn:hover,
+.body-btn:focus{
+	color: var(--main-font-color-dark);
+}
+.body-btn:hover::before,
+.body-btn:focus::before{
+	background-color: var(--main-font-color-dark);
+}
+/*tasteful recipes*/
 
 
 
