@@ -28,6 +28,7 @@ body{
 }
 section{
 	padding: 3.9rem 0;
+	overflow: hidden;
 }
 
 img{
@@ -189,8 +190,11 @@ header{
 	width: 100%;
 	max-width: 8.4rem;
 	height: .25rem;
+	opacity: 0;
 	background-color: white;
 	position: relative;
+	animation: grow 2s forwards;
+	animation-delay: .9s;
 }
 
 .line-right::before,
@@ -200,7 +204,15 @@ header{
 	top: 50%;
 	transform: translateY(-50%);
 	border: .6rem solid transparent;
+	opacity: 0;
+	animation: grow .5s forwards;
+	animation-delay: 1.2s;
 
+}
+.single-animation{
+	opacity: 0;
+	animation: fadeDown .5s forwards;
+	animation-delay: 1.5s;
 }
 .line-right::before{
 	border-right-color: white;
@@ -215,6 +227,9 @@ header{
 	font-size: 1.2rem;
 	color: var(--secondary-font-color);
 	margin: 0 1.6rem;
+	opacity: 0;
+	animation: spin .5s forwards;
+	animation-delay: .7s;
 }
 .single-animation h5{
 	color: white;
@@ -351,15 +366,17 @@ footer{
 	left: 50%;
 	transform: translateX(-50%);
 	border-radius: 50%;
+
 }
 .back-to-top i{
 	display: block;
 	color: white;
 	font-size: 2rem;
 	padding: 2rem;
+	animation: up 2s infinite;
 }
 .footer-content{
-	/*overflow: hidden;*/
+	overflow: hidden;
 
 }
 .footer-content h4{
@@ -551,9 +568,39 @@ footer{
 		width: 100%;
 	}
 }
+@keyframes spin {
+	0%{
+		transform: rotate(0);
+	}
+	100%{
+		opacity: 1;
+		transform: rotate(-360deg);
+	}
+}
 
+@keyframes fadeDown {
+	0%{
+		transform: translateY(-1rem) ;
+	}
+	100%{
+		opacity: 1;
+		transform: translateY(0) ;
+	}
+}
 
+@keyframes up {
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
 
+	100%{
+		opacity: 0;
+		transform: translateY(-1rem);
+	}
+}
 
 
 
